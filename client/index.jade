@@ -14,7 +14,6 @@ html.no-js(ng-app='hapi-auth', lang='en')
   body
     .row
       .small-12.columns
-        include views/nav/nav
     .row
       .small-12.columns
         div(ui-view)
@@ -28,12 +27,8 @@ html.no-js(ng-app='hapi-auth', lang='en')
     script(src='/vendor/moment/min/moment.min.js')
 
     script(src='/index.js')
-    script(src='/models/user.js')
-    script(src='/models/note.js')
-    script(src='/views/users/users.js')
-    script(src='/views/notes/notes_list.js')
-    script(src='/views/notes/notes_detail.js')
-    script(src='/views/nav/nav.js')
+    //-script(src='/models/user.js')
+    //-script(src='/models/note.js')
     script(src='/analytics.js')
         
     script.
