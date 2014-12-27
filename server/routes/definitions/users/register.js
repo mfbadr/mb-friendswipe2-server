@@ -8,14 +8,14 @@ module.exports = {
   tags:['users'],
   validate: {
     payload: {
-      username: Joi.string().min(3).max(12).required(),
-      password: Joi.string().min(3).required(),
-      avatar: Joi.string().required()
+      name: Joi.string().min(3).required(),
+      id: Joi.string().min(3).required()
     }
   },
   auth: false,
   handler: function(request, reply){
-    User.register(request.payload, function(err){
+    User.register(request.payload, function(err, results){
+      //console.log('route err', err, results);
       reply().code(err ? 400 : 200);
     });
   }

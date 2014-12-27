@@ -33,7 +33,7 @@ describe('User', function(){
   describe('.register', function(){
     it('should register a new User', function(done){
       User.register({name:'sam', id:'123'}, function(err, results){
-        console.log(err, results);
+        //console.log(err, results);
         expect(err).to.be.null;
         done();
       });
