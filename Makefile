@@ -1,7 +1,7 @@
 test:
-	@node node_modules/lab/bin/lab -v -m 5000 test/unit test/acceptance
+	@node node_modules/lab/bin/lab -v -m 5000 test/unit
 test-cov:
-	@node node_modules/lab/bin/lab -r lcov test/unit test/acceptance
+	@node node_modules/lab/bin/lab -r lcov test/unit
 test-e2e:
 	@node node_modules/protractor/bin/protractor protractor.conf.js
 
