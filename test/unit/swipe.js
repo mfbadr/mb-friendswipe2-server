@@ -30,15 +30,18 @@ describe('Swipe', function(){
     });
   });
 
-  //describe('.register', function(){
-    //it('should register a new User', function(done){
-      //User.register({name:'sam', id:'123'}, function(err, results){
-        //expect(err).to.be.null;
-        //expect(results.rows[0].id).to.equal('123');
+  describe('.new', function(){
+    it('should insert a new swipe', function(done){
+
+      var obj = {sender: '3', targer:'1', liked: true};
+
+      Swipe.new(obj, function(err, results){
+        expect(err).to.be.null;
+        expect(results.rows[0]).to.be.ok;
         //expect(results.rows[0].name).to.equal('sam');
-        //done();
-      //});
-    //});
-  //});
+        done();
+      });
+    });
+  });
 
 });
