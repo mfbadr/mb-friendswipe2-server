@@ -23,7 +23,7 @@ describe('Swipe', function(){
 
   describe('constructor', function(){
     it('should create a Swipe object', function(done){
-      var swipe = new Swipe({sender: '1', targer:'2', liked: true});
+      var swipe = new Swipe({sender: '1', target:'2', liked: true});
       expect(swipe).to.be.instanceof(Swipe);
       expect(swipe.sender).to.equal('1');
       done();
@@ -32,16 +32,13 @@ describe('Swipe', function(){
 
   describe('.new', function(){
     it('should insert a new swipe', function(done){
-
-      var obj = {sender: '3', targer:'1', liked: true};
-
+      var obj = {sender: '3', target:'1', liked: true};
       Swipe.new(obj, function(err, results){
         expect(err).to.be.null;
         expect(results.rows[0]).to.be.ok;
-        //expect(results.rows[0].name).to.equal('sam');
+        expect(results.rows[0].sender).to.equal('3');
         done();
       });
     });
   });
-
 });

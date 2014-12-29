@@ -9,9 +9,9 @@ function Swipe(obj){
 }
 
 Swipe.new = function(obj, cb){
-  var user = new Swipe(obj);
+  var swipe = new Swipe(obj);
 
-  pg.query('insert into users (name, id) values ($1, $2) returning id, name', [user.name, user.id], function(err, results){
+  pg.query('insert into swipes (sender, target, liked ) values ($1, $2, $3) returning id, sender, target, liked', [swipe.sender, swipe.target, swipe.liked], function(err, results){
     cb(err, results);
   });
 };
