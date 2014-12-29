@@ -10,7 +10,7 @@ function User(obj){
 User.register = function(obj, cb){
   var user = new User(obj);
 
-  pg.query('insert into users (name, id) values ($1, $2) returning id', [user.name, user.id], function(err, results){
+  pg.query('insert into users (name, id) values ($1, $2) returning id, name', [user.name, user.id], function(err, results){
     cb(err, results);
   });
 };

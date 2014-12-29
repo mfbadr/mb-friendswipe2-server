@@ -33,11 +33,12 @@ describe('User', function(){
   describe('.register', function(){
     it('should register a new User', function(done){
       User.register({name:'sam', id:'123'}, function(err, results){
-        //console.log('results' , results);
+        console.log('results' , results);
         expect(err).to.be.null;
         expect(results.rows[0].id).to.equal('123');
         done();
       });
     });
   });
+
 });
