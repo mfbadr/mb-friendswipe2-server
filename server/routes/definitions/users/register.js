@@ -16,6 +16,7 @@ module.exports = {
   handler: function(request, reply){
     User.register(request.payload, function(err, results){
       //console.log('route err', err, results);
+      if(err){console.log('Error registering user :', err);}
       reply().code(err ? 400 : 200);
     });
   }
