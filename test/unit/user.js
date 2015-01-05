@@ -1,4 +1,4 @@
-/* jshint expr:true */
+/* jshint expr:true, camelcase:false */
 
 'use strict';
 
@@ -42,6 +42,19 @@ describe('User', function(){
     it('should fail to insert an existing User', function(done){
       User.register({name:'edward', id:'1'}, function(err, results){
         expect(err).to.be.ok;
+        done();
+      });
+    });
+  });
+  describe('.query', function(){
+    it('should should return an array of facebook ids, names, and match times', function(done){
+      var userId = 1;
+      User.matches(userId, function(err, results){
+        console.log(err, results);
+
+        expect(results[0].liked).to.be.ok;
+        expect(results[0].sender_name).to.equal('bob');
+        expect(results[0].time).to.be.ok;
         done();
       });
     });

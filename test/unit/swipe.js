@@ -42,18 +42,5 @@ describe('Swipe', function(){
     });
   });
 //
-  describe('.query', function(){
-    it('should should return an array of facebook ids, names, and match times', function(done){
-      var userId = 1;
-      Swipe.query(userId, function(err, results){
-        console.log(err, results);
-
-        expect(results[0].liked).to.be.ok;
-        expect(results[0].sender_name).to.equal('bob');
-        expect(results[0].time).to.be.ok;
-        done();
-      });
-    });
-  });
 //
 });
