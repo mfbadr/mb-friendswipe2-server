@@ -28,8 +28,8 @@ User.matches = function(userId, cb){
       if(err){cb(err);}
       userSwipes = results.rows;
 
+      //match loop
       userSwipes.forEach(function(userSwipe){
-
         var tempArray = _.where(userTargets, {sender_id: userSwipe.target_id});
         tempArray.forEach(function(swipe){
           userMatches.push(swipe);
@@ -37,7 +37,6 @@ User.matches = function(userId, cb){
       });
 
       cb(err, userMatches);
-
     });
   });
 };

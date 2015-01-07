@@ -1,4 +1,4 @@
-/* jshint expr:true */
+/* jshint expr:true, camelcase:false */
 
 'use strict';
 
@@ -60,5 +60,25 @@ describe('Users', function(){
       });
     });
   });
+  //
+  describe('post /matches', function(){
+    it('should return matches for a user', function(done){
+      var options = {
+        method: 'post',
+        url: '/matches',
+        payload: {
+          id: '1'
+        }
+      };
+      server.inject(options, function(response){
+        //console.log(response);
+        expect(response.statusCode).to.equal(200);
+        expect(response.result[0].sender_id).to.equal('2');
+        expect(response.result[0].sender_name).to.equal('bob');
+        done();
+      });
+    });
+  });
+  //
 });
 
