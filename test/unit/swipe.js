@@ -11,7 +11,7 @@ var expect     = require('chai').expect,
     describe   = lab.describe,
     it         = lab.it,
     beforeEach = lab.beforeEach,
-    db         = h.getdb();
+    db         = h.getDb();
 
 describe('Swipe', function(){
 
