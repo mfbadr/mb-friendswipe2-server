@@ -18,6 +18,7 @@ User.register = function(obj, cb){
 };
 
 User.matches = function(userId, cb){
+  console.log('userId from User.matches :', userId);
   var userSwipes, userTargets, userMatches = [];
 
   pg.query('select sender as sender_id, time, liked, u.name as sender_name from swipes inner join users u on u.id = swipes.sender where target = $1 and liked = true order by time', [userId], function(err, results){
@@ -35,10 +36,16 @@ User.matches = function(userId, cb){
           userMatches.push(swipe);
         });
       });
+      console.log('userMatches FROM MODEL', userMatches);
 
       cb(err, userMatches);
     });
   });
+};
+
+
+User.swiped = function(userId, cb){
+  //returns an array of user IDs on which the user has swiped
 };
 
 module.exports = User;

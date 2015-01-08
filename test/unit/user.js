@@ -46,11 +46,11 @@ describe('User', function(){
       });
     });
   });
-  describe('.query', function(){
+  describe('.matches', function(){
     it('should should return an array of facebook ids, names, and match times', function(done){
       var userId = 1;
       User.matches(userId, function(err, results){
-        console.log(err, results);
+        console.log('userMatches FROM UNIT', results);
 
         expect(results[0].liked).to.be.ok;
         expect(results[0].sender_name).to.equal('bob');
