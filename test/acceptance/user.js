@@ -80,5 +80,25 @@ describe('Users', function(){
     });
   });
   //
+  describe('post /getswipes', function(){
+    it('should return array of swipe targets from user', function(done){
+      var options = {
+        method: 'post',
+        url: '/getswipes',
+        payload: {
+          id: '1'
+        }
+      };
+      server.inject(options, function(response){
+        //console.log('userMatches FROM ACCEPTANCE TEST :', response.result);
+        expect(response.statusCode).to.equal(200);
+        console.log('getswipes results', response.result);
+        expect(response.result.length).to.equal(2);
+        //expect(response.result[0].sender_id).to.equal('2');
+        //expect(response.result[0].sender_name).to.equal('bob');
+        done();
+      });
+    });
+  });
 });
 

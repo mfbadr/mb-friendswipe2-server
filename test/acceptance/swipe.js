@@ -23,13 +23,13 @@ describe('Users', function(){
     });
   });
 
-  describe('post /swipe', function(){
+  describe('post /newswipe', function(){
     it('should log a new swipe', function(done){
       var options = {
         method: 'post',
-        url: '/swipe',
+        url: '/newswipe',
         payload: {
-          sender: '1',
+          sender: '3',
           target: '2',
           liked: true
         }

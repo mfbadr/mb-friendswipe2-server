@@ -16,7 +16,7 @@ module.exports = {
     User.matches(request.payload.id, function(err, results){
       //console.log('route err', err, results);
       if(err){console.log('Error getting matches :', err);}
-      console.log('results FROM ROUTE: ', results);
+      //console.log('results FROM ROUTE: ', results);
       reply(results).code(err ? 400 : 200);
     });
   }
