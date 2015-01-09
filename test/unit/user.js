@@ -50,8 +50,7 @@ describe('User', function(){
     it('should should return an array of facebook ids, names, and match times', function(done){
       var userId = 1;
       User.matches(userId, function(err, results){
-        console.log('userMatches FROM UNIT', results);
-
+        //console.log('userMatches FROM UNIT', results);
         expect(results[0].liked).to.be.ok;
         expect(results[0].sender_name).to.equal('bob');
         expect(results[0].time).to.be.ok;
@@ -59,4 +58,17 @@ describe('User', function(){
       });
     });
   });
+  //
+  describe('.swipes', function(){
+    it('should should return an array of facebook ids', function(done){
+      var userId = 1;
+      User.swipes(userId, function(err, results){
+        console.log(results);
+        expect(results.rows).to.be.ok;
+        expect(results.rows.length).to.equal(2);
+        done();
+      });
+    });
+  });
+  //
 });

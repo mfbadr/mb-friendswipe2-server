@@ -44,7 +44,11 @@ User.matches = function(userId, cb){
 };
 
 
-User.swiped = function(userId, cb){
+User.swipes = function(userId, cb){
+  pg.query('select target from swipes where sender = $1', [userId], function(err, results){
+    cb(err, results);
+
+  });
   //returns an array of user IDs on which the user has swiped
 };
 
