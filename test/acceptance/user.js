@@ -71,7 +71,7 @@ describe('Users', function(){
         }
       };
       server.inject(options, function(response){
-        console.log('userMatches FROM ACCEPTANCE TEST :', response.result);
+        //console.log('userMatches FROM ACCEPTANCE TEST :', response.result);
         expect(response.statusCode).to.equal(200);
         expect(response.result[0].sender_id).to.equal('2');
         expect(response.result[0].sender_name).to.equal('bob');
