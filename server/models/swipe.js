@@ -13,7 +13,7 @@ function Swipe(obj){
 
 Swipe.new = function(obj, cb){
   var swipe = new Swipe(obj);
-  pg.query('insert into swipes (sender, target, liked ) values ($1, $2, $3) returning id, sender, target, liked', [swipe.sender, swipe.target, swipe.liked], function(err, results){
+  pg.query('insert into swipes (sender, target, liked ) values ($1, $2, $3) returning sender, target, liked', [swipe.sender, swipe.target, swipe.liked], function(err, results){
     cb(err, results);
   });
 };

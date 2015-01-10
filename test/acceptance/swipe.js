@@ -16,7 +16,7 @@ var expect       = require('chai').expect,
     it           = lab.it;
 
 
-describe('Users', function(){
+describe('Swipes', function(){
   beforeEach(function(done){
     cp.execFile(__dirname + '/../scripts/clean_db.sh', [db], {cwd:__dirname + '/../scripts'}, function(err, stdout, stderr){
       done();
