@@ -18,7 +18,6 @@ before_script:
   - sleep 5
 after_script:
   - npm run coveralls
-  - npm run e2e
 env:
   global:
     - DATABASE_URL=postgres://postgres@localhost/evernode_test
