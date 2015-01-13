@@ -10,7 +10,7 @@ This repository contains the code for the server power [FriendSwipe](https://git
 - Hapi
 - postgreSQL
 
-###
+### Testing
 - Unit and acceptance testing
 - Continious integration through travis-ci.org
 
